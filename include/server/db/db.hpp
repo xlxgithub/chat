@@ -1,5 +1,6 @@
 #ifndef DB_H
 #define DB_H
+
 #include<mysql/mysql.h>
 #include<string>
 #include<muduo/base/Logging.h>
@@ -12,11 +13,15 @@ public:
     //释放数据库连接资源
     ~Mysql();
     //连接数据库
+    bool connect();
     bool connect(std::string ip,unsigned short port,std::string user,std::string passsword,std::string dbname);
     //更新操作
-    bool updata(std::string sql);
+    bool update(std::string sql);
     //查询操作
-    MYSQL_RES* select(std::string sql);
+    MYSQL_RES* query(std::string sql);
+
+    //返回数据库连接
+    MYSQL* get();
 
     //刷新连接的起始空闲时间
     void refreshAlivetime(){m_alivetime=clock();}

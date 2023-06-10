@@ -13,6 +13,7 @@ void ChatServer::OnConnection(const muduo::net::TcpConnectionPtr &conn){
     LOG_INFO<<"连接成功了！！！！！！！！";
     if(!conn->connected()){
         LOG_INFO<<"！！连接断开了！！";
+        Chatservice::getinstance()->clinetCloseException(conn);
         conn->shutdown();
     }
 }

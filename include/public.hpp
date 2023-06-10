@@ -5,5 +5,7 @@ enum MSGID{
     LOG_ACK,
     REG_ID,
     REG_ACK,
+    ONECHAT,
 };
+
 #endif

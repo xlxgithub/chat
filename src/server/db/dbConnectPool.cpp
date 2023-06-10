@@ -65,7 +65,7 @@ DbPool::DbPool()
     m_cur_queue_count = 0;
     for(int i =0;i<m_initSize;i++){
         Mysql* conn = new Mysql();
-        if(!conn->connect(m_ip,m_port,m_username,m_password,m_dbname)){
+        if(!conn->connect()){
             LOG_INFO<<"数据库连接失败"<<__FILE__;
         }
         m_queue.push(conn);
@@ -83,7 +83,7 @@ DbPool::DbPool()
 DbPool::~DbPool()
 {
     DestroyPool();
-    while (m_queue.empty()){};
+    while (!m_queue.empty()){};
     flag=false;
     cv.notify_one();    
 }
@@ -91,6 +91,9 @@ DbPool::~DbPool()
 void DbPool::produceConnectionTask()
 {
     for(;;){
+        if(flag==false){
+            return;
+        }
         std::unique_lock<std::mutex> locker(m_queue_mutex);
         while (!m_queue.empty())
         {
@@ -116,7 +119,7 @@ void DbPool::produceConnectionTask()
 
 bool DbPool::loadConfigfile()
 {
-    FILE* fp = fopen("./mysql.ini","r");
+    FILE* fp = fopen("/root/project/chat/src/server/db/mysql.ini","r");
     if(fp==nullptr){
         LOG_INFO<<"数据库加载文件读取失败"<<__FILE__;
         return false;
@@ -139,26 +142,34 @@ bool DbPool::loadConfigfile()
         std::string value = str.substr(index+1,endindex-index-1);
         if(key=="ip"){
             m_ip = value;
+            
         }else if(key=="port"){
             m_port = atoi(value.c_str());
+            
         }else if(key=="username"){
             m_username = value;
+           
         }else if(key=="password"){
             m_password = value;
+            
         }else if(key=="dbname"){
             m_dbname = value;
+           
         }else if(key=="initSize"){
             m_initSize=atoi(value.c_str());
+           
         }else if(key=="maxSize"){
             m_MaxSize = atoi(value.c_str());
+           
         }else if(key=="maxIdleTime"){
             m_MaxidleTime=atoi(value.c_str());
+            
         }else if(key=="connectionTimeOut"){
             m_connectionTimeout = atoi(value.c_str());
+            
         }
     }
-    
-
+    return true;
 }
 
 void DbPool::ScanConnectionTask()

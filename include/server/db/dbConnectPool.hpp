@@ -9,6 +9,7 @@
 #include<thread>
 #include<functional>
 #include<condition_variable>
+#include<iostream>
 //定义数据库连接池 单例模式 超时关闭连接
 class DbPool{
 public:

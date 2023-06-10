@@ -10,9 +10,11 @@
 #include<muduo/base/Logging.h>
 #include<json.hpp>
 #include<map>
-
 #include"public.hpp"
-
+#include"UserModel.hpp"
+#include<unordered_map>
+#include<mutex>
+#include"OfflineMessage.hpp"
 using MsgHandler = std::function<void(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp)>;
 class Chatservice
 {
@@ -27,10 +29,26 @@ public:
     // 处理注册业务
     void reg(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp);
 
+    //处理客户端异常断开的函数
+    void clinetCloseException(const muduo::net::TcpConnectionPtr &conn);
+    //一对一聊天业务实现
+    void OneChat(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp);
+    //服务端异常退出处理代码
+    void reset();
     MsgHandler getHandler(int id);
 private:
     Chatservice();
     std::unordered_map<int,MsgHandler> m_handler;
+
+
+    // 存储在线用户的通信连接
+    std::unordered_map<int, muduo::net::TcpConnectionPtr> m_ConMap;
+    // 定义互斥锁，保证_userConnMap的线程安全
+    std::mutex m_mutex;
+
+
+    UserModel m_usermodel;
+    OfflineMessage m_offlineMessage;
 
 };
 
