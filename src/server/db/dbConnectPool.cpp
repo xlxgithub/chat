@@ -84,6 +84,7 @@ DbPool::~DbPool()
 {
     DestroyPool();
     while (m_queue.empty()){};
+    flag=false;
     cv.notify_one();    
 }
 
@@ -94,6 +95,9 @@ void DbPool::produceConnectionTask()
         while (!m_queue.empty())
         {
             cv.wait(locker); //队列不空 此处生产者线程进入等待状态
+        }
+        if(flag==false){
+            return;
         }
         //判断连接数量是否达到上限
         if(m_cur_queue_count < m_MaxSize){
@@ -160,6 +164,9 @@ bool DbPool::loadConfigfile()
 void DbPool::ScanConnectionTask()
 {
         for(;;){
+        if(flag==false){
+            return;
+        }
         std::this_thread::sleep_for(std::chrono::seconds(m_MaxidleTime));
         std::unique_lock<std::mutex> locker(m_queue_mutex);
         while (m_cur_queue_count>m_initSize)
