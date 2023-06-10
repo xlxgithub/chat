@@ -44,6 +44,7 @@ private:
     std::mutex m_queue_mutex;//阻塞队列的线程安全锁
     std::atomic_int m_cur_queue_count; 
     std::condition_variable cv;
+    bool flag = true;
 
 };
 

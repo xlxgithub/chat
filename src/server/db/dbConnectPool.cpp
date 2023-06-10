@@ -83,6 +83,8 @@ DbPool::DbPool()
 DbPool::~DbPool()
 {
     DestroyPool();
+    while (m_queue.empty()){};
+    cv.notify_one();    
 }
 
 void DbPool::produceConnectionTask()
