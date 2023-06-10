@@ -1,0 +1,35 @@
+The system is: Linux - sh: 0: getcwd() failed: No such file or directory
+4.15.0-169-generic - sh: 0: getcwd() failed: No such file or directory
+x86_64
+Determining if the C compiler works passed with the following output:
+Change Dir: /root/project/chat/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_782db"
+[1/2] Building C object CMakeFiles/cmTC_782db.dir/testCCompiler.c.o
+[2/2] Linking C executable cmTC_782db
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /root/project/chat/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_ecd70"
+[1/2] Building C object CMakeFiles/cmTC_ecd70.dir/CMakeCCompilerABI.c.o
+[2/2] Linking C executable cmTC_ecd70
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /root/project/chat/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_82cbf"
+[1/2] Building CXX object CMakeFiles/cmTC_82cbf.dir/testCXXCompiler.cxx.o
+[2/2] Linking CXX executable cmTC_82cbf
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /root/project/chat/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_827ca"
+[1/2] Building CXX object CMakeFiles/cmTC_827ca.dir/CMakeCXXCompilerABI.cpp.o
+[2/2] Linking CXX executable cmTC_827ca
+
+

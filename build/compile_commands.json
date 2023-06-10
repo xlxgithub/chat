@@ -1,0 +1,31 @@
+[
+{
+  "directory": "/root/project/chat/build",
+  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/Chatserver.cpp.o -c /root/project/chat/src/server/Chatserver.cpp",
+  "file": "/root/project/chat/src/server/Chatserver.cpp"
+},
+
+{
+  "directory": "/root/project/chat/build",
+  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/Chatservice.cpp.o -c /root/project/chat/src/server/Chatservice.cpp",
+  "file": "/root/project/chat/src/server/Chatservice.cpp"
+},
+
+{
+  "directory": "/root/project/chat/build",
+  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/main.cpp.o -c /root/project/chat/src/server/main.cpp",
+  "file": "/root/project/chat/src/server/main.cpp"
+},
+
+{
+  "directory": "/root/project/chat/build",
+  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/db/db.cpp.o -c /root/project/chat/src/server/db/db.cpp",
+  "file": "/root/project/chat/src/server/db/db.cpp"
+},
+
+{
+  "directory": "/root/project/chat/build",
+  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/db/dbConnectPool.cpp.o -c /root/project/chat/src/server/db/dbConnectPool.cpp",
+  "file": "/root/project/chat/src/server/db/dbConnectPool.cpp"
+}
+]

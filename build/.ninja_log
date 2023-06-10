@@ -1,0 +1,11 @@
+# ninja log v5
+12	2296	1686311372	src/server/CMakeFiles/chat.dir/main.cpp.o	8fcce85312dc6f8e
+0	2870	1686311373	src/server/CMakeFiles/chat.dir/Chatservice.cpp.o	655134288c34a7c8
+0	4006	1686311374	src/server/CMakeFiles/chat.dir/Chatserver.cpp.o	9b061b26e5b9c49e
+4006	4207	1686311374	../bin/chat	e4bdc04bfbb3ed50
+1	2767	1686312929	src/server/CMakeFiles/chat.dir/main.cpp.o	8fcce85312dc6f8e
+1	3061	1686312929	src/server/CMakeFiles/chat.dir/Chatservice.cpp.o	655134288c34a7c8
+2767	3231	1686312929	src/server/CMakeFiles/chat.dir/db/db.cpp.o	30f53469632e8d61
+1	4455	1686312930	src/server/CMakeFiles/chat.dir/Chatserver.cpp.o	9b061b26e5b9c49e
+0	12	1686312954	src/server/CMakeFiles/chat.dir/db/dbConnectPool.cpp.o	d70a75f94e955179
+12	234	1686312955	../bin/chat	fd54237ae16f91ba
