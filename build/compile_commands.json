@@ -1,49 +1,61 @@
 [
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g -g   -o src/server/CMakeFiles/chat.dir/Chatserver.cpp.o -c /root/project/chat/src/server/Chatserver.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/Chatserver.cpp.o -c /root/project/chat/src/server/Chatserver.cpp",
   "file": "/root/project/chat/src/server/Chatserver.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g -g   -o src/server/CMakeFiles/chat.dir/Chatservice.cpp.o -c /root/project/chat/src/server/Chatservice.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/Chatservice.cpp.o -c /root/project/chat/src/server/Chatservice.cpp",
   "file": "/root/project/chat/src/server/Chatservice.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g -g   -o src/server/CMakeFiles/chat.dir/OfflineMessage.cpp.o -c /root/project/chat/src/server/OfflineMessage.cpp",
-  "file": "/root/project/chat/src/server/OfflineMessage.cpp"
-},
-
-{
-  "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g -g   -o src/server/CMakeFiles/chat.dir/UserModel.cpp.o -c /root/project/chat/src/server/UserModel.cpp",
-  "file": "/root/project/chat/src/server/UserModel.cpp"
-},
-
-{
-  "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g -g   -o src/server/CMakeFiles/chat.dir/main.cpp.o -c /root/project/chat/src/server/main.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/main.cpp.o -c /root/project/chat/src/server/main.cpp",
   "file": "/root/project/chat/src/server/main.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g -g   -o src/server/CMakeFiles/chat.dir/db/db.cpp.o -c /root/project/chat/src/server/db/db.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/db/db.cpp.o -c /root/project/chat/src/server/db/db.cpp",
   "file": "/root/project/chat/src/server/db/db.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g -g   -o src/server/CMakeFiles/chat.dir/db/dbConnectPool.cpp.o -c /root/project/chat/src/server/db/dbConnectPool.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/db/dbConnectPool.cpp.o -c /root/project/chat/src/server/db/dbConnectPool.cpp",
   "file": "/root/project/chat/src/server/db/dbConnectPool.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/server -I../include/server/db  -g -g   -o src/server/CMakeFiles/chat.dir/db/test.cpp.o -c /root/project/chat/src/server/db/test.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/db/test.cpp.o -c /root/project/chat/src/server/db/test.cpp",
   "file": "/root/project/chat/src/server/db/test.cpp"
+},
+
+{
+  "directory": "/root/project/chat/build",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/__/model/Friend.cpp.o -c /root/project/chat/src/model/Friend.cpp",
+  "file": "/root/project/chat/src/model/Friend.cpp"
+},
+
+{
+  "directory": "/root/project/chat/build",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/__/model/Groupmodel.cpp.o -c /root/project/chat/src/model/Groupmodel.cpp",
+  "file": "/root/project/chat/src/model/Groupmodel.cpp"
+},
+
+{
+  "directory": "/root/project/chat/build",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/__/model/OfflineMessage.cpp.o -c /root/project/chat/src/model/OfflineMessage.cpp",
+  "file": "/root/project/chat/src/model/OfflineMessage.cpp"
+},
+
+{
+  "directory": "/root/project/chat/build",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/chat.dir/__/model/UserModel.cpp.o -c /root/project/chat/src/model/UserModel.cpp",
+  "file": "/root/project/chat/src/model/UserModel.cpp"
 }
 ]

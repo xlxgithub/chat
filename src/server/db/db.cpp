@@ -39,7 +39,7 @@ bool Mysql::connect()
     return p;
 }
 // 连接数据库
-bool Mysql::connect(std::string ip, unsigned short port, std::string user, std::string passsword, std::string dbname)
+bool Mysql::connect(const std::string& ip,const unsigned short& port,const std::string& user,const std::string& passsword,const std::string& dbname)
 {
     
     MYSQL *p = mysql_real_connect(m_sql,ip.c_str(),user.c_str(),passsword.c_str(),dbname.c_str(),3306,nullptr,0);
@@ -57,7 +57,7 @@ bool Mysql::connect(std::string ip, unsigned short port, std::string user, std::
     return p;
 }
 //更新操作
-bool Mysql::update(std::string sql){
+bool Mysql::update(const std::string& sql){
     if (mysql_query(m_sql, sql.c_str()))
     {
         LOG_INFO << __FILE__ << ":" << __LINE__ << ":"
@@ -68,7 +68,7 @@ bool Mysql::update(std::string sql){
     return true;
 }
 //查询操作
-MYSQL_RES* Mysql::query(std::string sql){
+MYSQL_RES* Mysql::query(const std::string& sql){
 
     if (mysql_query(m_sql, sql.c_str()))
     {

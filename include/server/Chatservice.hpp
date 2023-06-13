@@ -15,6 +15,9 @@
 #include<unordered_map>
 #include<mutex>
 #include"OfflineMessage.hpp"
+#include"Friend.hpp"
+#include"Groupmodel.hpp"
+
 using MsgHandler = std::function<void(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp)>;
 class Chatservice
 {
@@ -33,6 +36,17 @@ public:
     void clinetCloseException(const muduo::net::TcpConnectionPtr &conn);
     //一对一聊天业务实现
     void OneChat(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp);
+
+    //加好友业务的实现
+    void addfriend(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp);
+    //创建群组业务的实现
+    void creategroup(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp);
+    //加入群组业务的实现
+    void addgroup(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp);
+    //群组聊天业务的实现
+    void groupchat(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp);
+
+
     //服务端异常退出处理代码
     void reset();
     MsgHandler getHandler(int id);
@@ -49,6 +63,8 @@ private:
 
     UserModel m_usermodel;
     OfflineMessage m_offlineMessage;
+    Friend m_friend;
+    Groupmodel m_groupmodel;
 
 };
 

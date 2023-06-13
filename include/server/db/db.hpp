@@ -14,11 +14,11 @@ public:
     ~Mysql();
     //连接数据库
     bool connect();
-    bool connect(std::string ip,unsigned short port,std::string user,std::string passsword,std::string dbname);
+    bool connect(const std::string& ip,const unsigned short& port,const std::string& user,const std::string& passsword,const std::string& dbname);
     //更新操作
-    bool update(std::string sql);
+    bool update(const std::string& sql);
     //查询操作
-    MYSQL_RES* query(std::string sql);
+    MYSQL_RES* query(const std::string& sql);
 
     //返回数据库连接
     MYSQL* get();
@@ -26,7 +26,7 @@ public:
     //刷新连接的起始空闲时间
     void refreshAlivetime(){m_alivetime=clock();}
     //返回存活的时间
-    clock_t getAliceTime(){return clock()-m_alivetime;}
+    const clock_t getAliceTime(){return clock()-m_alivetime;}
 
 
 private:

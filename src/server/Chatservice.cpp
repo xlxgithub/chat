@@ -11,6 +11,10 @@ Chatservice::Chatservice(){
     m_handler.insert({MSGID::LOG_ID,std::bind(&Chatservice::login,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3)});
     m_handler.insert({MSGID::REG_ID,std::bind(&Chatservice::reg,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3)});
     m_handler.insert({MSGID::ONECHAT,std::bind(&Chatservice::OneChat,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3)});
+    m_handler.insert({MSGID::ADDFRIEND,std::bind(&Chatservice::addfriend,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3)});
+    m_handler.insert({MSGID::CREATE_GROUP,std::bind(&Chatservice::creategroup,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3)});  
+    m_handler.insert({MSGID::ADD_GROUP,std::bind(&Chatservice::addgroup,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3)});  
+    m_handler.insert({MSGID::CHAT_GROUP,std::bind(&Chatservice::groupchat,this,std::placeholders::_1,std::placeholders::_2,std::placeholders::_3)});  
 }
 
 void Chatservice::login(const muduo::net::TcpConnectionPtr &conn, nlohmann::json &js, muduo::Timestamp time)
@@ -47,6 +51,36 @@ void Chatservice::login(const muduo::net::TcpConnectionPtr &conn, nlohmann::json
                 response["offlinemsg"] = vec_offMessage;
                 // 读取该用户的离线消息后，把该用户的所有离线消息删除掉
                 m_offlineMessage.remove(id);
+            }
+
+            //显示好友列表
+            std::vector<User> v_u1 = m_friend.query(user.getId());
+            if(!v_u1.empty()){
+                std::vector<std::string> vec2;
+                for (User &user : v_u1)
+                {
+                    nlohmann::json js;
+                    js["id"] = user.getId();
+                    js["name"] = user.getName();
+                    js["state"] = user.getState();
+                    vec2.push_back(js.dump());
+                }
+                response["friends"] = vec2;
+            }
+
+            //显示用户的群组信息
+            std::vector<Group> v_g1 = m_groupmodel.queryGroups(user.getId());
+            if(!v_g1.empty()){
+                std::vector<std::string> temp;
+                for (Group &group : v_g1)
+                {
+                    nlohmann::json js;
+                    js["groupid"] = group.getId();
+                    js["groupname"] = group.getName();
+                    js["groupdesc"] = group.getDesc();
+                    temp.push_back(js.dump());
+                }
+                response["group"] = temp;
             }
 
             response["msgid"] = MSGID::LOG_ACK;
@@ -145,6 +179,66 @@ void Chatservice::OneChat(const muduo::net::TcpConnectionPtr &conn, nlohmann::js
         //用户不在线
         m_offlineMessage.insert(user.getId(),message);
     }
+}
+
+void Chatservice::addfriend(const muduo::net::TcpConnectionPtr &conn, nlohmann::json &js, muduo::Timestamp)
+{
+    int friendid = js["friendid"];
+    int userid = js["userid"];
+    m_friend.insert(userid,friendid);
+}
+
+void Chatservice::creategroup(const muduo::net::TcpConnectionPtr &conn, nlohmann::json &js, muduo::Timestamp)
+{
+    int userid = js["id"];
+    std::string groupname = js["gname"];
+    std::string groupdesc = js["gdesc"];
+    Group group;
+    group.setName(groupname);
+    group.setDesc(groupdesc);
+    if(m_groupmodel.create_group(group)){
+        m_groupmodel.add_group(group.getId(),userid,"creator");
+    }   
+    else{
+        LOG_INFO<<"创建群组失败";
+        return;
+    }
+}
+
+void Chatservice::addgroup(const muduo::net::TcpConnectionPtr &conn, nlohmann::json &js, muduo::Timestamp)
+{
+    //加入群组
+    //{"msgid":8,"groupid":1,"userid":5}
+    // add_group(int& groupid,int& ueserid,const std::string& groupprole="normal");
+    int groupid = js["groupid"];
+    int userid = js["userid"];
+    if(m_groupmodel.add_group(groupid,userid,"normal")){
+        return;
+    }
+    LOG_INFO<<"加入群组失败";
+    return;
+}
+
+void Chatservice::groupchat(const muduo::net::TcpConnectionPtr &conn, nlohmann::json &js, muduo::Timestamp)
+{
+    //{"msgid":9,"groupid":1,"message":"hello world"};
+    int groupid = js["groupid"];
+    std::string message = js["message"];
+    //需要根据组id 找到所有用户id
+    std::vector<int> v_u1 = m_groupmodel.queryUser(groupid);
+    std::lock_guard<std::mutex> locker(m_mutex);
+    for(auto id:v_u1){
+        //1.判断id是否在线
+        auto iter = m_ConMap.find(id);
+        //用户在线
+        if(iter!=m_ConMap.end()){
+            iter->second->send(message);
+        }else{
+            //用户不在线
+            m_offlineMessage.insert(id,message);
+        }
+    }
+
 }
 
 void Chatservice::reset()

@@ -6,6 +6,10 @@ enum MSGID{
     REG_ID,
     REG_ACK,
     ONECHAT,
+    ADDFRIEND,
+    CREATE_GROUP,
+    ADD_GROUP,
+    CHAT_GROUP,
 };
 
 #endif

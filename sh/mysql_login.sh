@@ -5,6 +5,9 @@ PORT="3306"
 USERNAME="root"
 PASSWORD="xlx0220@"
 
+
+
+
 DBNAME="chat"   
 #表名                                                    
 TABLENAME="user" 
@@ -17,7 +20,7 @@ TABLENAME5="offlineMessage"
 
 #创建使用数据库
 create_database="create database IF NOT EXISTS ${DBNAME}"
-mysql   -u${USERNAME} -p${PASSWORD}  -e"${create_database}"
+mysql -u${USERNAME} -p${PASSWORD}  -e"${create_database}"
 
 
 create_table_sql1="create table IF NOT EXISTS ${TABLENAME} ( 
@@ -55,5 +58,5 @@ do
 str="create_table_sql"$i
 str1=`eval echo '$'"$str"`
 #echo $str1
-mysql   -u${USERNAME} -p${PASSWORD} ${DBNAME} -e"${str1}"
+mysql  -h${IP}  -u${USERNAME} -p${PASSWORD} ${DBNAME} -e"${str1}"
 done
