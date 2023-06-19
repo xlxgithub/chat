@@ -10,6 +10,7 @@ enum MSGID{
     CREATE_GROUP,
     ADD_GROUP,
     CHAT_GROUP,
+    LOG_QUIT,
 };
 
 #endif

@@ -69,23 +69,64 @@ void Chatservice::login(const muduo::net::TcpConnectionPtr &conn, nlohmann::json
             }
 
             //显示用户的群组信息
-            std::vector<Group> v_g1 = m_groupmodel.queryGroups(user.getId());
-            if(!v_g1.empty()){
-                std::vector<std::string> temp;
-                for (Group &group : v_g1)
+            std::vector<Group> groupuserVec = m_groupmodel.queryGroups(id);
+            if (!groupuserVec.empty())
+            {
+                // group:[{groupid:[xxx, xxx, xxx, xxx]}]
+                std::vector<std::string> groupV;
+                for (Group &group : groupuserVec)
                 {
-                    nlohmann::json js;
-                    js["groupid"] = group.getId();
-                    js["groupname"] = group.getName();
-                    js["groupdesc"] = group.getDesc();
-                    temp.push_back(js.dump());
+                    nlohmann::json grpjson;
+                    grpjson["id"] = group.getId();
+                    grpjson["groupname"] = group.getName();
+                    grpjson["groupdesc"] = group.getDesc();
+
+                    std::vector<std::string> userV;
+                    std::vector<Groupuser> user = m_groupmodel.queryUser(group.getId());
+                    for (Groupuser &user : user)
+                    {
+                        nlohmann::json js;
+                        js["id"] = user.getId();
+                        js["name"] = user.getName();
+                        js["state"] = user.getState();
+                        js["role"] = user.getRole();
+                        userV.push_back(js.dump());
+                    }
+                    grpjson["users"] = userV;
+                    groupV.push_back(grpjson.dump());
                 }
-                response["group"] = temp;
+
+                response["groups"] = groupV;
             }
+            // std::vector<Group> v_g1 = m_groupmodel.queryGroups(user.getId());
+            // if(!v_g1.empty()){
+            //     std::vector<std::string> temp;
+                
+            //     for (Group &group : v_g1)
+            //     {
+            //         nlohmann::json js;
+            //         js["groupid"] = group.getId();
+            //         js["groupname"] = group.getName();
+            //         js["groupdesc"] = group.getDesc();
+            //         //增加一个根据群组id查询用户信息 id name state role
+            //         std::vector<std::string> tempuser = m_groupmodel.queryUser(group.getId());
+            //         for(int i=0;i<tempuser.size();i+=4){
+            //             js["id"] = tempuser[i];
+            //             js["name"] = tempuser[i+1];
+            //             js["state"] = tempuser[i+2];
+            //             js["role"] = tempuser[i+3];
+                        
+            //             temp.push_back(js.dump());
+            //         }
+            //     }
+            //     response["group"] = temp;
+            // }
 
             response["msgid"] = MSGID::LOG_ACK;
             response["errno"] = 0;
             response["errmsg"] = "登陆成功";
+            response["id"] = id;
+            response["name"]=user.getName();
             conn->send(response.dump());
         }
     }
@@ -120,10 +161,13 @@ void Chatservice::reg(const muduo::net::TcpConnectionPtr &conn, nlohmann::json &
     user.setPwd(passwd);
     if(!m_usermodel.insert(user)){
        LOG_INFO<<"注册用户失败"; 
+       js["errno"]=1;
+       conn->send(js.dump());
        return;
     }
-    js["msgid"]=MSGID::LOG_ACK;
+    js["msgid"]=MSGID::REG_ACK;
     js["id"]=user.getId();
+    js["errno"]=0;
     conn->send(js.dump());
 
 }
@@ -155,6 +199,8 @@ void Chatservice::OneChat(const muduo::net::TcpConnectionPtr &conn, nlohmann::js
 {
     int toid = js["toid"];
     std::string message = js["message"];
+    std::string time = js["time"];
+    std::string msgtype = js["msgtype"];
 
     //先看用户在不在线
     User user = m_usermodel.query(toid);
@@ -177,7 +223,7 @@ void Chatservice::OneChat(const muduo::net::TcpConnectionPtr &conn, nlohmann::js
     //2.用户不在线
     if(user.getState()=="offline"){
         //用户不在线
-        m_offlineMessage.insert(user.getId(),message);
+        m_offlineMessage.insert(user.getId(),message,time,msgtype);
     }
 }
 
@@ -224,18 +270,21 @@ void Chatservice::groupchat(const muduo::net::TcpConnectionPtr &conn, nlohmann::
     //{"msgid":9,"groupid":1,"message":"hello world"};
     int groupid = js["groupid"];
     std::string message = js["message"];
+    std::string time = js["time"];
+     std::string msgtype = js["msgtype"];
+
     //需要根据组id 找到所有用户id
-    std::vector<int> v_u1 = m_groupmodel.queryUser(groupid);
+    std::vector<int> v_u1 = m_groupmodel.queryUserid(groupid);
     std::lock_guard<std::mutex> locker(m_mutex);
     for(auto id:v_u1){
         //1.判断id是否在线
         auto iter = m_ConMap.find(id);
         //用户在线
         if(iter!=m_ConMap.end()){
-            iter->second->send(message);
+            iter->second->send(js.dump());
         }else{
             //用户不在线
-            m_offlineMessage.insert(id,message);
+            m_offlineMessage.insert(id,message,time,msgtype);
         }
     }
 

@@ -4,7 +4,7 @@
 #include<string>
 class Groupuser:public User{
 public:
-    void setRole(std::string& role) { this->m_role = role; }
+    void setRole(const std::string& role) { this->m_role = role; }
     std::string getRole() { return this->m_role; }
 
 private:

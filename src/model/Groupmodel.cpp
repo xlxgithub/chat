@@ -70,19 +70,39 @@ std::vector<Group> Groupmodel::queryGroups(const int &userid)
             Group group;
             group.setId(atoi(row[0]));
             group.setName(row[1]);
-            group.setDesc(row[2]);
+            group.setDesc(row[2]); 
             res.push_back(group);
         }
     }
     return res;
 }
 
-std::vector<int> Groupmodel::queryUser(const int &groupid)
+std::vector<Groupuser> Groupmodel::queryUser(const int &groupid)
 {
 
+    std::vector<Groupuser> res;
+    char sql[1024]={0};
+    sprintf(sql,"select a.id,a.name,a.state,b.grouprole from user a inner join groupuser b on a.id=b.userid where b.groupid=%d",groupid);
+    MYSQL_RES* my_res = DbPool::getinstance()->get()->query(sql);
+    if(my_res!=nullptr){
+        MYSQL_ROW row;
+        while((row = mysql_fetch_row(my_res))!=nullptr){
+            Groupuser guser;
+            guser.setId(atoi(row[0]));
+            guser.setName(row[1]);
+            guser.setRole(row[2]);
+            guser.setState(row[3]);
+            res.push_back(guser);
+        }
+    }
+    return res;
+}
+
+std::vector<int> Groupmodel::queryUserid(int &groupid)
+{
     std::vector<int> res;
     char sql[1024]={0};
-    sprintf(sql,"select userid from groupuser  where groupid=%d",groupid);
+    sprintf(sql,"select userid from groupuser where groupid=%d",groupid);
     MYSQL_RES* my_res = DbPool::getinstance()->get()->query(sql);
     if(my_res!=nullptr){
         MYSQL_ROW row;

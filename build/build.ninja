@@ -100,93 +100,149 @@ build src/server/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
   restat = 1
 build src/server/edit_cache: phony src/server/CMakeFiles/edit_cache.util
 # =============================================================================
-# Object build statements for EXECUTABLE target chat
+# Object build statements for EXECUTABLE target server
 
 
 #############################################
-# Order-only phony target for chat
+# Order-only phony target for server
 
-build cmake_object_order_depends_target_chat: phony || src/server/CMakeFiles/chat.dir
-build src/server/CMakeFiles/chat.dir/Chatserver.cpp.o: CXX_COMPILER__chat ../src/server/Chatserver.cpp || cmake_object_order_depends_target_chat
-  DEP_FILE = src/server/CMakeFiles/chat.dir/Chatserver.cpp.o.d
+build cmake_object_order_depends_target_server: phony || src/server/CMakeFiles/server.dir
+build src/server/CMakeFiles/server.dir/Chatserver.cpp.o: CXX_COMPILER__server ../src/server/Chatserver.cpp || cmake_object_order_depends_target_server
+  DEP_FILE = src/server/CMakeFiles/server.dir/Chatserver.cpp.o.d
   FLAGS = -g
   INCLUDES = -I../include -I../include/model -I../include/server -I../include/server/db
-  OBJECT_DIR = src/server/CMakeFiles/chat.dir
-  OBJECT_FILE_DIR = src/server/CMakeFiles/chat.dir
-build src/server/CMakeFiles/chat.dir/Chatservice.cpp.o: CXX_COMPILER__chat ../src/server/Chatservice.cpp || cmake_object_order_depends_target_chat
-  DEP_FILE = src/server/CMakeFiles/chat.dir/Chatservice.cpp.o.d
+  OBJECT_DIR = src/server/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/server.dir
+build src/server/CMakeFiles/server.dir/Chatservice.cpp.o: CXX_COMPILER__server ../src/server/Chatservice.cpp || cmake_object_order_depends_target_server
+  DEP_FILE = src/server/CMakeFiles/server.dir/Chatservice.cpp.o.d
   FLAGS = -g
   INCLUDES = -I../include -I../include/model -I../include/server -I../include/server/db
-  OBJECT_DIR = src/server/CMakeFiles/chat.dir
-  OBJECT_FILE_DIR = src/server/CMakeFiles/chat.dir
-build src/server/CMakeFiles/chat.dir/main.cpp.o: CXX_COMPILER__chat ../src/server/main.cpp || cmake_object_order_depends_target_chat
-  DEP_FILE = src/server/CMakeFiles/chat.dir/main.cpp.o.d
+  OBJECT_DIR = src/server/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/server.dir
+build src/server/CMakeFiles/server.dir/main.cpp.o: CXX_COMPILER__server ../src/server/main.cpp || cmake_object_order_depends_target_server
+  DEP_FILE = src/server/CMakeFiles/server.dir/main.cpp.o.d
   FLAGS = -g
   INCLUDES = -I../include -I../include/model -I../include/server -I../include/server/db
-  OBJECT_DIR = src/server/CMakeFiles/chat.dir
-  OBJECT_FILE_DIR = src/server/CMakeFiles/chat.dir
-build src/server/CMakeFiles/chat.dir/db/db.cpp.o: CXX_COMPILER__chat ../src/server/db/db.cpp || cmake_object_order_depends_target_chat
-  DEP_FILE = src/server/CMakeFiles/chat.dir/db/db.cpp.o.d
+  OBJECT_DIR = src/server/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/server.dir
+build src/server/CMakeFiles/server.dir/db/db.cpp.o: CXX_COMPILER__server ../src/server/db/db.cpp || cmake_object_order_depends_target_server
+  DEP_FILE = src/server/CMakeFiles/server.dir/db/db.cpp.o.d
   FLAGS = -g
   INCLUDES = -I../include -I../include/model -I../include/server -I../include/server/db
-  OBJECT_DIR = src/server/CMakeFiles/chat.dir
-  OBJECT_FILE_DIR = src/server/CMakeFiles/chat.dir/db
-build src/server/CMakeFiles/chat.dir/db/dbConnectPool.cpp.o: CXX_COMPILER__chat ../src/server/db/dbConnectPool.cpp || cmake_object_order_depends_target_chat
-  DEP_FILE = src/server/CMakeFiles/chat.dir/db/dbConnectPool.cpp.o.d
+  OBJECT_DIR = src/server/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/server.dir/db
+build src/server/CMakeFiles/server.dir/db/dbConnectPool.cpp.o: CXX_COMPILER__server ../src/server/db/dbConnectPool.cpp || cmake_object_order_depends_target_server
+  DEP_FILE = src/server/CMakeFiles/server.dir/db/dbConnectPool.cpp.o.d
   FLAGS = -g
   INCLUDES = -I../include -I../include/model -I../include/server -I../include/server/db
-  OBJECT_DIR = src/server/CMakeFiles/chat.dir
-  OBJECT_FILE_DIR = src/server/CMakeFiles/chat.dir/db
-build src/server/CMakeFiles/chat.dir/db/test.cpp.o: CXX_COMPILER__chat ../src/server/db/test.cpp || cmake_object_order_depends_target_chat
-  DEP_FILE = src/server/CMakeFiles/chat.dir/db/test.cpp.o.d
+  OBJECT_DIR = src/server/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/server.dir/db
+build src/server/CMakeFiles/server.dir/db/test.cpp.o: CXX_COMPILER__server ../src/server/db/test.cpp || cmake_object_order_depends_target_server
+  DEP_FILE = src/server/CMakeFiles/server.dir/db/test.cpp.o.d
   FLAGS = -g
   INCLUDES = -I../include -I../include/model -I../include/server -I../include/server/db
-  OBJECT_DIR = src/server/CMakeFiles/chat.dir
-  OBJECT_FILE_DIR = src/server/CMakeFiles/chat.dir/db
-build src/server/CMakeFiles/chat.dir/__/model/Friend.cpp.o: CXX_COMPILER__chat ../src/model/Friend.cpp || cmake_object_order_depends_target_chat
-  DEP_FILE = src/server/CMakeFiles/chat.dir/__/model/Friend.cpp.o.d
+  OBJECT_DIR = src/server/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/server.dir/db
+build src/server/CMakeFiles/server.dir/__/model/Friend.cpp.o: CXX_COMPILER__server ../src/model/Friend.cpp || cmake_object_order_depends_target_server
+  DEP_FILE = src/server/CMakeFiles/server.dir/__/model/Friend.cpp.o.d
   FLAGS = -g
   INCLUDES = -I../include -I../include/model -I../include/server -I../include/server/db
-  OBJECT_DIR = src/server/CMakeFiles/chat.dir
-  OBJECT_FILE_DIR = src/server/CMakeFiles/chat.dir/__/model
-build src/server/CMakeFiles/chat.dir/__/model/Groupmodel.cpp.o: CXX_COMPILER__chat ../src/model/Groupmodel.cpp || cmake_object_order_depends_target_chat
-  DEP_FILE = src/server/CMakeFiles/chat.dir/__/model/Groupmodel.cpp.o.d
+  OBJECT_DIR = src/server/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/server.dir/__/model
+build src/server/CMakeFiles/server.dir/__/model/Groupmodel.cpp.o: CXX_COMPILER__server ../src/model/Groupmodel.cpp || cmake_object_order_depends_target_server
+  DEP_FILE = src/server/CMakeFiles/server.dir/__/model/Groupmodel.cpp.o.d
   FLAGS = -g
   INCLUDES = -I../include -I../include/model -I../include/server -I../include/server/db
-  OBJECT_DIR = src/server/CMakeFiles/chat.dir
-  OBJECT_FILE_DIR = src/server/CMakeFiles/chat.dir/__/model
-build src/server/CMakeFiles/chat.dir/__/model/OfflineMessage.cpp.o: CXX_COMPILER__chat ../src/model/OfflineMessage.cpp || cmake_object_order_depends_target_chat
-  DEP_FILE = src/server/CMakeFiles/chat.dir/__/model/OfflineMessage.cpp.o.d
+  OBJECT_DIR = src/server/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/server.dir/__/model
+build src/server/CMakeFiles/server.dir/__/model/OfflineMessage.cpp.o: CXX_COMPILER__server ../src/model/OfflineMessage.cpp || cmake_object_order_depends_target_server
+  DEP_FILE = src/server/CMakeFiles/server.dir/__/model/OfflineMessage.cpp.o.d
   FLAGS = -g
   INCLUDES = -I../include -I../include/model -I../include/server -I../include/server/db
-  OBJECT_DIR = src/server/CMakeFiles/chat.dir
-  OBJECT_FILE_DIR = src/server/CMakeFiles/chat.dir/__/model
-build src/server/CMakeFiles/chat.dir/__/model/UserModel.cpp.o: CXX_COMPILER__chat ../src/model/UserModel.cpp || cmake_object_order_depends_target_chat
-  DEP_FILE = src/server/CMakeFiles/chat.dir/__/model/UserModel.cpp.o.d
+  OBJECT_DIR = src/server/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/server.dir/__/model
+build src/server/CMakeFiles/server.dir/__/model/UserModel.cpp.o: CXX_COMPILER__server ../src/model/UserModel.cpp || cmake_object_order_depends_target_server
+  DEP_FILE = src/server/CMakeFiles/server.dir/__/model/UserModel.cpp.o.d
   FLAGS = -g
   INCLUDES = -I../include -I../include/model -I../include/server -I../include/server/db
-  OBJECT_DIR = src/server/CMakeFiles/chat.dir
-  OBJECT_FILE_DIR = src/server/CMakeFiles/chat.dir/__/model
+  OBJECT_DIR = src/server/CMakeFiles/server.dir
+  OBJECT_FILE_DIR = src/server/CMakeFiles/server.dir/__/model
 
 # =============================================================================
-# Link build statements for EXECUTABLE target chat
+# Link build statements for EXECUTABLE target server
 
 
 #############################################
-# Link the executable ../bin/chat
+# Link the executable ../bin/server
 
-build ../bin/chat: CXX_EXECUTABLE_LINKER__chat src/server/CMakeFiles/chat.dir/Chatserver.cpp.o src/server/CMakeFiles/chat.dir/Chatservice.cpp.o src/server/CMakeFiles/chat.dir/main.cpp.o src/server/CMakeFiles/chat.dir/db/db.cpp.o src/server/CMakeFiles/chat.dir/db/dbConnectPool.cpp.o src/server/CMakeFiles/chat.dir/db/test.cpp.o src/server/CMakeFiles/chat.dir/__/model/Friend.cpp.o src/server/CMakeFiles/chat.dir/__/model/Groupmodel.cpp.o src/server/CMakeFiles/chat.dir/__/model/OfflineMessage.cpp.o src/server/CMakeFiles/chat.dir/__/model/UserModel.cpp.o
+build ../bin/server: CXX_EXECUTABLE_LINKER__server src/server/CMakeFiles/server.dir/Chatserver.cpp.o src/server/CMakeFiles/server.dir/Chatservice.cpp.o src/server/CMakeFiles/server.dir/main.cpp.o src/server/CMakeFiles/server.dir/db/db.cpp.o src/server/CMakeFiles/server.dir/db/dbConnectPool.cpp.o src/server/CMakeFiles/server.dir/db/test.cpp.o src/server/CMakeFiles/server.dir/__/model/Friend.cpp.o src/server/CMakeFiles/server.dir/__/model/Groupmodel.cpp.o src/server/CMakeFiles/server.dir/__/model/OfflineMessage.cpp.o src/server/CMakeFiles/server.dir/__/model/UserModel.cpp.o
   FLAGS = -g
   LINK_LIBRARIES = -lmuduo_net -lmuduo_base -lmysqlclient -lpthread
-  OBJECT_DIR = src/server/CMakeFiles/chat.dir
+  OBJECT_DIR = src/server/CMakeFiles/server.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = ../bin/chat
-  TARGET_PDB = chat.dbg
+  TARGET_FILE = ../bin/server
+  TARGET_PDB = server.dbg
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /root/project/chat/src/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/client/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /root/project/chat/build/src/client && /root/source/cmake-3.12.2-Linux-x86_64/bin/cmake -H/root/project/chat -B/root/project/chat/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+build src/client/rebuild_cache: phony src/client/CMakeFiles/rebuild_cache.util
+
+#############################################
+# Utility command for edit_cache
+
+build src/client/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /root/project/chat/build/src/client && /root/source/cmake-3.12.2-Linux-x86_64/bin/cmake-gui -H/root/project/chat -B/root/project/chat/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+build src/client/edit_cache: phony src/client/CMakeFiles/edit_cache.util
+# =============================================================================
+# Object build statements for EXECUTABLE target client
+
+
+#############################################
+# Order-only phony target for client
+
+build cmake_object_order_depends_target_client: phony || src/client/CMakeFiles/client.dir
+build src/client/CMakeFiles/client.dir/main.cpp.o: CXX_COMPILER__client ../src/client/main.cpp || cmake_object_order_depends_target_client
+  DEP_FILE = src/client/CMakeFiles/client.dir/main.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I../include -I../include/model -I../include/server -I../include/server/db
+  OBJECT_DIR = src/client/CMakeFiles/client.dir
+  OBJECT_FILE_DIR = src/client/CMakeFiles/client.dir
+
+# =============================================================================
+# Link build statements for EXECUTABLE target client
+
+
+#############################################
+# Link the executable ../bin/client
+
+build ../bin/client: CXX_EXECUTABLE_LINKER__client src/client/CMakeFiles/client.dir/main.cpp.o
+  FLAGS = -g
+  LINK_LIBRARIES = -lpthread
+  OBJECT_DIR = src/client/CMakeFiles/client.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = ../bin/client
+  TARGET_PDB = client.dbg
 # =============================================================================
 # Target aliases.
 
-build chat: phony ../bin/chat
+build client: phony ../bin/client
+build server: phony ../bin/server
 # =============================================================================
 # Folder targets.
 
@@ -196,13 +252,19 @@ build chat: phony ../bin/chat
 #############################################
 # Folder: /root/project/chat/build/src
 
-build  src/all: phony src/server/all
+build  src/all: phony src/server/all src/client/all
+# =============================================================================
+
+#############################################
+# Folder: /root/project/chat/build/src/client
+
+build  src/client/all: phony client
 # =============================================================================
 
 #############################################
 # Folder: /root/project/chat/build/src/server
 
-build  src/server/all: phony chat
+build  src/server/all: phony server
 # =============================================================================
 # Unknown Build Time Dependencies.
 # Tell Ninja that they may appear as side effects of build rules
@@ -215,7 +277,7 @@ build  src/server/all: phony chat
 #############################################
 # The main all target.
 
-build all: phony ../bin/chat
+build all: phony ../bin/server ../bin/client
 
 #############################################
 # Make the all target the default.
@@ -225,13 +287,13 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt ../src/server/CMakeLists.txt /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeCInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeCXXInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeGenericSystem.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeInitializeConfigs.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeLanguageInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeSystemSpecificInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeSystemSpecificInitialize.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/Platform/Linux.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.12.2/CMakeCCompiler.cmake CMakeFiles/3.12.2/CMakeCXXCompiler.cmake CMakeFiles/3.12.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt ../src/client/CMakeLists.txt ../src/server/CMakeLists.txt /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeCInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeCXXInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeGenericSystem.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeInitializeConfigs.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeLanguageInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeSystemSpecificInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeSystemSpecificInitialize.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/Platform/Linux.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.12.2/CMakeCCompiler.cmake CMakeFiles/3.12.2/CMakeCXXCompiler.cmake CMakeFiles/3.12.2/CMakeSystem.cmake
   pool = console
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../src/CMakeLists.txt ../src/server/CMakeLists.txt /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeCInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeCXXInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeGenericSystem.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeInitializeConfigs.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeLanguageInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeSystemSpecificInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeSystemSpecificInitialize.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/Platform/Linux.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.12.2/CMakeCCompiler.cmake CMakeFiles/3.12.2/CMakeCXXCompiler.cmake CMakeFiles/3.12.2/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../src/CMakeLists.txt ../src/client/CMakeLists.txt ../src/server/CMakeLists.txt /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeCInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeCXXInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeGenericSystem.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeInitializeConfigs.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeLanguageInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeSystemSpecificInformation.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/CMakeSystemSpecificInitialize.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/Platform/Linux.cmake /root/source/cmake-3.12.2-Linux-x86_64/share/cmake-3.12/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.12.2/CMakeCCompiler.cmake CMakeFiles/3.12.2/CMakeCXXCompiler.cmake CMakeFiles/3.12.2/CMakeSystem.cmake: phony
 
 #############################################
 # Clean all the built files.

@@ -20,7 +20,10 @@ public:
     std::vector<Group> queryGroups(const int& userid);
 
     // 根据组id找到所有用户
-    std::vector<int> queryUser(const int& groupid);
+    std::vector<Groupuser> queryUser(const int& groupid);
+
+    // 根据组id找到所有用户id
+    std::vector<int> queryUserid(int& groupid);
 private:
 };
 #endif
