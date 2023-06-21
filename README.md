@@ -13,7 +13,7 @@
     4.在当前服务器类的构造函数中,注册处理连接的回调函数和处理读写事件的回调函数
     5.设置合适的服务端线程数量，muduo库会自己划分I/O线程和worker线程
 
-## 3.业务模块代码
+## 3.服务端业务模块代码
     1.给网络模块代码提供一个接口 根据msgid不同 处理不同情景
     2.定义msgid的意义 与处理函数一一对应
     3.根据业务需求 编写 处理函数其中包括
@@ -24,3 +24,16 @@
         5.创建群组函数 creategroup
         6.加入群组函数 addgroup
         7.群聊天函数   chatgroup
+        8.注销登录函数 logout
+## 4.客户端业务模块代码
+    1.主界面有注册 登陆 退出三个选择
+    2.登陆之后 提供支持的命令列表
+        {"help", "显示所有支持的命令，格式help"},
+        {"chat", "一对一聊天，格式chat:friendid:message"},
+        {"addfriend", "添加好友，格式addfriend:friendid"},
+        {"creategroup", "创建群组，格式creategroup:groupname:groupdesc"},
+        {"addgroup", "加入群组，格式addgroup:groupid"},
+        {"groupchat", "群聊，格式groupchat:groupid:message"},
+        {"loginout", "注销，格式loginout"};
+## 5.nginx实现负载均衡
+## 6.Redis实现跨服务器通信
