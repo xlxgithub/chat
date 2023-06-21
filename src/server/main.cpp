@@ -13,11 +13,19 @@ void resetHandler(int)
     exit(0);
 }
 
-int main(){
+int main(int argc, char **argv){
 
     signal(SIGINT, resetHandler);
     muduo::net::EventLoop loop;
-    muduo::net::InetAddress listenAddr("127.0.0.1",9999);
+    if (argc < 2)
+    {
+        cerr << "command invalid! example: ./ChatClient 127.0.0.1 6000" << endl;
+        exit(-1);
+    }
+    // 解析通过命令行参数传递的ip和port
+    uint16_t port = atoi(argv[1]);
+
+    muduo::net::InetAddress listenAddr("127.0.0.1",port);
     ChatServer server(&loop,listenAddr,"caht");
     server.start();
     loop.loop();

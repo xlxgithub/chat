@@ -1,67 +1,73 @@
 [
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/server.dir/Chatserver.cpp.o -c /root/project/chat/src/server/Chatserver.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db -I../include/server/redis  -g -g   -o src/server/CMakeFiles/server.dir/Chatserver.cpp.o -c /root/project/chat/src/server/Chatserver.cpp",
   "file": "/root/project/chat/src/server/Chatserver.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/server.dir/Chatservice.cpp.o -c /root/project/chat/src/server/Chatservice.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db -I../include/server/redis  -g -g   -o src/server/CMakeFiles/server.dir/Chatservice.cpp.o -c /root/project/chat/src/server/Chatservice.cpp",
   "file": "/root/project/chat/src/server/Chatservice.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/server.dir/main.cpp.o -c /root/project/chat/src/server/main.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db -I../include/server/redis  -g -g   -o src/server/CMakeFiles/server.dir/main.cpp.o -c /root/project/chat/src/server/main.cpp",
   "file": "/root/project/chat/src/server/main.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/server.dir/db/db.cpp.o -c /root/project/chat/src/server/db/db.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db -I../include/server/redis  -g -g   -o src/server/CMakeFiles/server.dir/db/db.cpp.o -c /root/project/chat/src/server/db/db.cpp",
   "file": "/root/project/chat/src/server/db/db.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/server.dir/db/dbConnectPool.cpp.o -c /root/project/chat/src/server/db/dbConnectPool.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db -I../include/server/redis  -g -g   -o src/server/CMakeFiles/server.dir/db/dbConnectPool.cpp.o -c /root/project/chat/src/server/db/dbConnectPool.cpp",
   "file": "/root/project/chat/src/server/db/dbConnectPool.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/server.dir/db/test.cpp.o -c /root/project/chat/src/server/db/test.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db -I../include/server/redis  -g -g   -o src/server/CMakeFiles/server.dir/db/test.cpp.o -c /root/project/chat/src/server/db/test.cpp",
   "file": "/root/project/chat/src/server/db/test.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/server.dir/__/model/Friend.cpp.o -c /root/project/chat/src/model/Friend.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db -I../include/server/redis  -g -g   -o src/server/CMakeFiles/server.dir/__/model/Friend.cpp.o -c /root/project/chat/src/model/Friend.cpp",
   "file": "/root/project/chat/src/model/Friend.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/server.dir/__/model/Groupmodel.cpp.o -c /root/project/chat/src/model/Groupmodel.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db -I../include/server/redis  -g -g   -o src/server/CMakeFiles/server.dir/__/model/Groupmodel.cpp.o -c /root/project/chat/src/model/Groupmodel.cpp",
   "file": "/root/project/chat/src/model/Groupmodel.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/server.dir/__/model/OfflineMessage.cpp.o -c /root/project/chat/src/model/OfflineMessage.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db -I../include/server/redis  -g -g   -o src/server/CMakeFiles/server.dir/__/model/OfflineMessage.cpp.o -c /root/project/chat/src/model/OfflineMessage.cpp",
   "file": "/root/project/chat/src/model/OfflineMessage.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/server/CMakeFiles/server.dir/__/model/UserModel.cpp.o -c /root/project/chat/src/model/UserModel.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db -I../include/server/redis  -g -g   -o src/server/CMakeFiles/server.dir/__/model/UserModel.cpp.o -c /root/project/chat/src/model/UserModel.cpp",
   "file": "/root/project/chat/src/model/UserModel.cpp"
 },
 
 {
   "directory": "/root/project/chat/build",
-  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db  -g   -o src/client/CMakeFiles/client.dir/main.cpp.o -c /root/project/chat/src/client/main.cpp",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db -I../include/server/redis  -g -g   -o src/server/CMakeFiles/server.dir/redis/redis.cpp.o -c /root/project/chat/src/server/redis/redis.cpp",
+  "file": "/root/project/chat/src/server/redis/redis.cpp"
+},
+
+{
+  "directory": "/root/project/chat/build",
+  "command": "/usr/bin/c++   -I../include -I../include/model -I../include/server -I../include/server/db -I../include/server/redis  -g -g   -o src/client/CMakeFiles/client.dir/main.cpp.o -c /root/project/chat/src/client/main.cpp",
   "file": "/root/project/chat/src/client/main.cpp"
 }
 ]

@@ -13,7 +13,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 include_directories(${PROJECT_SOURCE_DIR}/include/model)
 include_directories(${PROJECT_SOURCE_DIR}/include/server)
 include_directories(${PROJECT_SOURCE_DIR}/include/server/db)
-
+include_directories(${PROJECT_SOURCE_DIR}/include/server/redis)
 
 #加载子目录
 add_subdirectory(src)

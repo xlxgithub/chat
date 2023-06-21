@@ -19,7 +19,7 @@ void ChatServer::OnConnection(const muduo::net::TcpConnectionPtr &conn){
 }
 void ChatServer::OnMessage(const muduo::net::TcpConnectionPtr &conn,muduo::net::Buffer *buffer, muduo::Timestamp receiveTime){
     std::string temp = buffer->retrieveAllAsString();
-    //数据反序列化
+    //数据序列化
     nlohmann::json js = js.parse(temp);
 
     auto handler = Chatservice::getinstance()->getHandler(js["msgid"]);

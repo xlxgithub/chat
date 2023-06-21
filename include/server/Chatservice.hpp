@@ -17,6 +17,7 @@
 #include"OfflineMessage.hpp"
 #include"Friend.hpp"
 #include"Groupmodel.hpp"
+#include"redis.hpp"
 
 using MsgHandler = std::function<void(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp)>;
 class Chatservice
@@ -45,11 +46,16 @@ public:
     void addgroup(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp);
     //群组聊天业务的实现
     void groupchat(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp);
+    //退出代码业务实现
+    void logout(const muduo::net::TcpConnectionPtr &conn,nlohmann::json &js, muduo::Timestamp);
 
 
     //服务端异常退出处理代码
     void reset();
     MsgHandler getHandler(int id);
+
+    // 从redis消息队列中获取订阅的消息
+    void handleRedisSubscribeMessage(int userid, string msg);
 private:
     Chatservice();
     std::unordered_map<int,MsgHandler> m_handler;
@@ -65,6 +71,9 @@ private:
     OfflineMessage m_offlineMessage;
     Friend m_friend;
     Groupmodel m_groupmodel;
+
+    //定义redis对象
+    Redis m_redis;
 
 };
 
